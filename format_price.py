@@ -14,11 +14,11 @@ def format_price(price):
             formatted_price = float(price)
         except (ValueError, TypeError):
             return None
+        formatted_price = round(formatted_price, 2)
+
+        return format(formatted_price, choose_formatting(formatted_price)).replace(',', ' ')
     else:
         return None
-
-
-
 
 
 if __name__ == '__main__':
