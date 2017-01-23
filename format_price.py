@@ -9,27 +9,30 @@ def choose_formatting(price):
 
 
 def format_price(price):
-    if price > 0:
-        try:
-            formatted_price = float(price)
-        except (ValueError, TypeError):
-            return None
-        formatted_price = round(formatted_price, 2)
 
-        return format(formatted_price, choose_formatting(formatted_price)).replace(',', ' ')
-    else:
+    try:
+        if isinstance(price, str):
+            price = price.replace(',', '.')
+        formatted_price = float(price)
+    except (ValueError, TypeError):
         return None
+    formatted_price = round(formatted_price, 2)
+
+    if formatted_price > 0:
+        return format(formatted_price, choose_formatting(formatted_price)).replace(',', ' ')
 
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('price', help='specify price to make it beautiful')
-    # users_price = parser.parse_args().price
+    parser = argparse.ArgumentParser()
+    parser.add_argument('price', help='specify price to make it beautiful')
+    users_price = parser.parse_args().price
 
-    users_price = input('price : ')
+    print(format_price(users_price))
 
-    formatted_price = users_price.replace(',', '.')
-
-    pp = float(formatted_price)
-
-    print(format(pp, ',.2f').replace(',', ' '))
+    # users_price = input('price : ')
+    #
+    # formatted_price = users_price.replace(',', '.')
+    #
+    # pp = float(formatted_price)
+    #
+    # print(format(pp, ',.2f').replace(',', ' '))
