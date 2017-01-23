@@ -10,9 +10,8 @@
 * Запускаем тесты для скрипта `python tests.py`
 * Используем в виде импортируемого модуля 
     
-      `import format_price
-      
-       print(format_price.format_price('446,00'))`
+        import format_price
+        print(format_price.format_price('446,00'))
       
 ## Зависимости
 
