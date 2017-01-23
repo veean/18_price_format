@@ -28,11 +28,3 @@ if __name__ == '__main__':
     users_price = parser.parse_args().price
 
     print(format_price(users_price))
-
-    # users_price = input('price : ')
-    #
-    # formatted_price = users_price.replace(',', '.')
-    #
-    # pp = float(formatted_price)
-    #
-    # print(format(pp, ',.2f').replace(',', ' '))

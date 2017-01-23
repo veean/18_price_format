@@ -16,7 +16,7 @@
       
 ## Зависимости
 
- * Python 3.5 и выше
+ * Python 3.5 и выше.
 
 # Project Goals
 
